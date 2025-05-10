@@ -1,11 +1,7 @@
 const express =require("express");
 const router = express.Router();
-
-router.get("/",(req,res)=>{
-    res.status(202).send("welcome to khanna portfolio from router ");
-});
-router.route("/register").get((req,res)=>{
-    res.status(202).send("this is registration form");
-})
+const controller = require("../Contoller/controller")
+router.route("/").get(controller.home);
+router.route("/register").get(controller.register)
 
 module.exports = router;
