@@ -1,18 +1,17 @@
-const home = async(req,res)=>{
+const home =  async(req,res)=>{
 try {
-     res.status(202).send({msg:"this is home page"});
+    res.status(202).send({msg:"this is home page"});
 } catch (error) {
-    console.log(error)
+    console.log(error);
 }
-
 }
 
 const register = async(req,res)=>{
-try {
-     res.status(202).send({msg:"this is registeration page"});
-} catch (error) {
-    console.log({msg:"not found"})
+    try {
+        console.log(req.body)
+        res.status(202).send({msg:req.body});
+    } catch (error) {
+        console.log(error)
+    }
 }
-}
-
-module.exports = {home,register};
+module.exports= {home,register}
